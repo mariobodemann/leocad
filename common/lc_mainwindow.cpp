@@ -2308,7 +2308,7 @@ bool lcMainWindow::OpenProject(const QString& FileName)
 		if (LoadFileName.isEmpty())
 			LoadFileName = lcGetProfileString(LC_PROFILE_PROJECTS_PATH);
 
-		LoadFileName = QFileDialog::getOpenFileName(this, tr("Open Model"), LoadFileName, tr("Supported Files (*.lcd *.ldr *.dat *.mpd);;All Files (*.*)"));
+		LoadFileName = QFileDialog::getOpenFileName(this, tr("Open Model"), LoadFileName, tr("Supported Files (*.lcd *.ldr *.dat *.mpd);;All Files (*.*)"), nullptr, QFileDialog::DontUseNativeDialog);
 
 		if (LoadFileName.isEmpty())
 			return false;
@@ -2352,7 +2352,7 @@ void lcMainWindow::MergeProject()
 	if (LoadFileName.isEmpty())
 		LoadFileName = lcGetProfileString(LC_PROFILE_PROJECTS_PATH);
 
-	LoadFileName = QFileDialog::getOpenFileName(this, tr("Merge Model"), LoadFileName, tr("Supported Files (*.lcd *.ldr *.dat *.mpd);;All Files (*.*)"));
+	LoadFileName = QFileDialog::getOpenFileName(this, tr("Merge Model"), LoadFileName, tr("Supported Files (*.lcd *.ldr *.dat *.mpd);;All Files (*.*)"), nullptr, QFileDialog::DontUseNativeDialog);
 
 	if (LoadFileName.isEmpty())
 		return;
@@ -2383,7 +2383,7 @@ void lcMainWindow::ImportLDD()
 	if (!SaveProjectIfModified())
 		return;
 
-	QString LoadFileName = QFileDialog::getOpenFileName(this, tr("Import"), QString(), tr("LEGO Diginal Designer Files (*.lxf);;All Files (*.*)"));
+	QString LoadFileName = QFileDialog::getOpenFileName(this, tr("Import"), QString(), tr("LEGO Diginal Designer Files (*.lxf);;All Files (*.*)"), nullptr, QFileDialog::DontUseNativeDialog);
 	if (LoadFileName.isEmpty())
 		return;
 

@@ -359,7 +359,7 @@ void lcQPreferencesDialog::on_partsLibraryBrowse_clicked()
 
 void lcQPreferencesDialog::on_partsArchiveBrowse_clicked()
 {
-	QString result = QFileDialog::getOpenFileName(this, tr("Select Parts Library Archive"), ui->partsLibrary->text(), tr("Supported Archives (*.zip *.bin);;All Files (*.*)"));
+	QString result = QFileDialog::getOpenFileName(this, tr("Select Parts Library Archive"), ui->partsLibrary->text(), tr("Supported Archives (*.zip *.bin);;All Files (*.*)"), nullptr, QFileDialog::DontUseNativeDialog);
 
 	if (!result.isEmpty())
 		ui->partsLibrary->setText(QDir::toNativeSeparators(result));
@@ -367,7 +367,7 @@ void lcQPreferencesDialog::on_partsArchiveBrowse_clicked()
 
 void lcQPreferencesDialog::on_ColorConfigBrowseButton_clicked()
 {
-	QString Result = QFileDialog::getOpenFileName(this, tr("Select Color Configuration File"), ui->ColorConfigEdit->text(), tr("Settings Files (*.ldr);;All Files (*.*)"));
+	QString Result = QFileDialog::getOpenFileName(this, tr("Select Color Configuration File"), ui->ColorConfigEdit->text(), tr("Settings Files (*.ldr);;All Files (*.*)"), nullptr, QFileDialog::DontUseNativeDialog);
 
 	if (!Result.isEmpty())
 		ui->ColorConfigEdit->setText(QDir::toNativeSeparators(Result));
@@ -375,7 +375,7 @@ void lcQPreferencesDialog::on_ColorConfigBrowseButton_clicked()
 
 void lcQPreferencesDialog::on_MinifigSettingsBrowseButton_clicked()
 {
-	QString Result = QFileDialog::getOpenFileName(this, tr("Select Minifig Settings File"), ui->MinifigSettingsEdit->text(), tr("Settings Files (*.ini);;All Files (*.*)"));
+	QString Result = QFileDialog::getOpenFileName(this, tr("Select Minifig Settings File"), ui->MinifigSettingsEdit->text(), tr("Settings Files (*.ini);;All Files (*.*)"), nullptr, QFileDialog::DontUseNativeDialog);
 
 	if (!Result.isEmpty())
 		ui->MinifigSettingsEdit->setText(QDir::toNativeSeparators(Result));
@@ -389,7 +389,7 @@ void lcQPreferencesDialog::on_povrayExecutableBrowse_clicked()
 	QString filter(tr("All Files (*.*)"));
 #endif
 
-	QString result = QFileDialog::getOpenFileName(this, tr("Select POV-Ray Executable"), ui->povrayExecutable->text(), filter);
+	QString result = QFileDialog::getOpenFileName(this, tr("Select POV-Ray Executable"), ui->povrayExecutable->text(), filter, nullptr, QFileDialog::DontUseNativeDialog);
 
 	if (!result.isEmpty())
 		ui->povrayExecutable->setText(QDir::toNativeSeparators(result));
@@ -785,7 +785,7 @@ void lcQPreferencesDialog::on_deleteCategory_clicked()
 
 void lcQPreferencesDialog::on_importCategories_clicked()
 {
-	QString FileName = QFileDialog::getOpenFileName(this, tr("Import Categories"), "", tr("Text Files (*.txt);;All Files (*.*)"));
+	QString FileName = QFileDialog::getOpenFileName(this, tr("Import Categories"), "", tr("Text Files (*.txt);;All Files (*.*)"), nullptr, QFileDialog::DontUseNativeDialog);
 
 	if (FileName.isEmpty())
 		return;
@@ -1074,7 +1074,7 @@ void lcQPreferencesDialog::on_shortcutRemove_clicked()
 
 void lcQPreferencesDialog::on_shortcutsImport_clicked()
 {
-	QString FileName = QFileDialog::getOpenFileName(this, tr("Import shortcuts"), "", tr("Text Files (*.txt);;All Files (*.*)"));
+	QString FileName = QFileDialog::getOpenFileName(this, tr("Import shortcuts"), "", tr("Text Files (*.txt);;All Files (*.*)"), nullptr, QFileDialog::DontUseNativeDialog);
 
 	if (FileName.isEmpty())
 		return;
@@ -1266,7 +1266,7 @@ void lcQPreferencesDialog::on_mouseRemove_clicked()
 
 void lcQPreferencesDialog::on_MouseImportButton_clicked()
 {
-	QString FileName = QFileDialog::getOpenFileName(this, tr("Import Shortcuts"), "", tr("Text Files (*.txt);;All Files (*.*)"));
+	QString FileName = QFileDialog::getOpenFileName(this, tr("Import Shortcuts"), "", tr("Text Files (*.txt);;All Files (*.*)"), nullptr, QFileDialog::DontUseNativeDialog);
 
 	if (FileName.isEmpty())
 		return;

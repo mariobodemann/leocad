@@ -691,7 +691,7 @@ QString Project::GetExportFileName(const QString& FileName, const QString& Defau
 		SaveFileName += "." + DefaultExtension;
 	}
 
-	return QFileDialog::getSaveFileName(gMainWindow, DialogTitle, SaveFileName, DialogFilter);
+	return QFileDialog::getSaveFileName(gMainWindow, DialogTitle, SaveFileName, DialogFilter, nullptr, QFileDialog::DontUseNativeDialog);
 }
 
 bool Project::Export3DStudio(const QString& FileName)

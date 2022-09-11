@@ -207,7 +207,7 @@ void lcMinifigDialog::on_TemplateDeleteButton_clicked()
 
 void lcMinifigDialog::on_TemplateImportButton_clicked()
 {
-	QString FileName = QFileDialog::getOpenFileName(this, tr("Import Templates"), "", tr("Minifig Template Files (*.minifig);;All Files (*.*)"));
+	QString FileName = QFileDialog::getOpenFileName(this, tr("Import Templates"), "", tr("Minifig Template Files (*.minifig);;All Files (*.*)"), nullptr, QFileDialog::DontUseNativeDialog);
 
 	if (FileName.isEmpty())
 		return;
